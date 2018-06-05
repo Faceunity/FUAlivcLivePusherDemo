@@ -1,0 +1,370 @@
+/*
+ Localizable.strings
+ AlivcLivePusherTest
+ 
+ Created by TripleL on 2017/10/19.
+ Copyright © 2017年 Alivc. All rights reserved.
+ */
+
+
+"live_scene_list" = "Scene list of live";
+
+"live_basic_function" = "PusherSDKV3.3.5";
+
+"live_basic_function_old" = "PusherSDKV1.3";
+
+"license_declaration" = "License Declaration";
+
+"version" = "Version:v3.3.5";
+
+"pusher_setting" = "Pusher setting";
+
+"input_tips" = "Please enter url or scan two-dimensional code";
+
+"resolution_label" = "Resolution";
+
+"quality_mode_label" = "Quality Mode";
+
+"beauty_mode_label" = "Beauty Mode";
+
+"max_bitrate" = "Max Bitrate";
+
+"target_bitrate" = "Target Bitrate";
+
+"min_bitrate" = "Min Bitrate";
+
+"initial_bitrate" = "Initial Bitrate";
+
+"audio_bitrate" = "Audio Bitrate";
+
+"captrue_fps" = "Captrue Fps";
+
+"min_fps" = "Min Fps";
+
+"audio_sampling_rate" = "Audio SampleRate";
+
+"sound_track" = "Sound Track";
+
+"audio_profile" = "Audio Profile";
+
+"single_track" = "Single Track";
+
+"dual_track" = "Dual Track";
+
+"reconnect_duration" = "Reconnect Duration";
+
+"reconnect_times" = "Reconnect Times";
+
+"landscape_model" = "Orientation";
+
+"push_url_notice_text" = "It is recommended to change push url to avoid error caused by many people using same url";
+
+"front_camera" = "Front camera";
+
+"mirror" = "Mirror";
+
+"watermark" = "Watermark";
+
+"watermark_setting" = "Setting";
+
+"audio_only_push_streaming" = "Audio Only";
+
+"video_only_push_streaming" = "Video Only";
+
+"audio_hardware_encode" = "Audio Hardware Encode";
+
+"background_image" = "Background Image";
+
+"network_weak_image" = "Network Weak Image";
+
+"auto_focus" = "Auto Focus";
+
+"beauty_enable" = "Beauty on";
+
+"hardware_encode" = "Hardware Encode";
+
+"asynchronous_interface" = "Async interface";
+
+"start_preview_button" = "Start preview";
+
+"stop_preview_button" = "Stop preview";
+
+"start_push" = "Start pushing";
+
+"start_button" = "Start";
+
+"pause_button" = "Pause";
+
+"resume_button" = "Resume";
+
+"stop_button" = "Stop";
+
+"more_setting_button" = "More setting";
+
+"repush_button" = "Restart pushing";
+
+"slide_right_view_log_char" = "Slide right to view log";
+
+"slide_left_view_log" = "Slide left to view log chart";
+
+"share_button" = "Share";
+
+"add_button" = "add tags";
+
+"remove_button" = "remove tags";
+
+"tile" = "tile";
+
+"fit" = "fit";
+
+"cut" = "cut";
+
+"beauty_on" = "Beauty on";
+
+"beauty_off" = "Beauty off";
+
+"beauty_white" = "Whitening";
+
+"beauty_skin_smooth" = "Buffing";
+
+"beauty_cheekpink" = "CheekPink";
+
+"beauty_thinface" = "ThinFace";
+
+"beauty_shortenface" = "ShortenFace";
+
+"beauty_bigeye" = "BigEye";
+
+"beauty_ruddy" = "Ruddy";
+
+"beaut_brightness" = "Brightness";
+
+"beauty_saturation" = "Saturation";
+
+"save_log" = "Save log";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"zoom" = "Zoom";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"beauty_button" = "Beauty";
+
+"auto_bitrate" = "Auto Birtate";
+
+"user_main_stream" = "user main stream";
+
+"user_mix_stream" = "user mix stream";
+
+"auto_resolution" = "Auto Resolution";
+
+"sweep_code" = "Sweep code";
+
+"preview_mirror" = "Preview Mirror";
+
+"push_mirror" = "Push Mirror";
+
+"keyframe_interval" = "GOP";
+
+"flash" = "Flash";
+
+"render" = "render";
+
+"video_encode" = "video_encode";
+
+"audio_encode" = "audio_encode";
+
+"sweep_code_label" = "Please put the code in the frame to scan";
+
+"mirror_button_open" = "开启镜像";
+
+"mirror_button_close" = "关闭镜像";
+
+"log_button_open" = "开启日志";
+
+"log_button_close" = "关闭日志";
+
+"no_camera_permission" = "Camera usage is not permitted, please open first";
+
+"no_record_audio_permission" = "Audio is not permitted to record, please open first";
+
+"dialog_title" = "Error tips";
+
+"ok" = "OK";
+
+"network_poor" = "The network is unstable, please quit or try again";
+
+"network_recovery" = "The network has recovered";
+
+"reconnect_start" = "Start reconnecting";
+
+"reconnect_fail" = "Reconnection failed";
+
+"connect_fail" = "Connect failed";
+
+"reconnect_success" = "Reconnection succeed";
+
+"senddata_timeout" = "Sending data timeout";
+
+"restart_success" = "Restart successfully";
+
+"system_error" = "System error:";
+
+"sdk_error" = "SDK error：";
+
+"argument_exception" = "Arguments error";
+
+"state_exception" = "States error";
+
+"bite_error" = "Bitrate setting error";
+
+"drop_frame" = "Drop frame";
+
+"adjust_bitrate" = "Bitrate adjusted";
+
+"adjust_fps" = "Fps adjusted";
+
+"start_drop_gop" = "Start dropping GOP";
+
+"stop_drop_gop" = "Stop dropping GOP";
+
+"bit_control" = "Bitrate control";
+
+"min_control_interval" = "Min interval of bitrate control";
+
+"upbps_duration" = "Min interval of upbps";
+
+"upbps_min_pree" = "Percentage of upbps";
+
+"upbps_size" = "Size of upbps";
+
+"control_times" = "Times of bitrate control";
+
+"url_empty" = "Please enter url";
+
+"start_preview_log" = "Start preview";
+
+"connectRecovery_log" = "Network recovery";
+
+"stop_preview_log" = "Stop preview";
+
+"start_push_log" = "Start push";
+
+"stop_push_log" = "Stop push";
+
+"pause_push_log" = "Pause";
+
+"resume_push_log" = "Resume";
+
+"first_frame_log" = "First frame show";
+
+"push_url_log" = "Push url";
+
+"ispushing_log" = "Pushing";
+
+"restart_push_log" = "Restart Push";
+
+"exit" = "Exit";
+
+"reconnect_button" = "Reconnect";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"render" = "Render";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"total_time" = "Total consuming";
+
+"audio_fps" = "Audio fps";
+
+"video_fps" = "Video fps";
+
+"bitrate" = "Bitrate";
+
+"video_encode" = "Video encode";
+
+"audio_encode" = "Audio encode";
+
+"buffer" = "Buffer";
+
+"video_renderbuffer" = "Video render";
+
+"video_encodebuffer" = "Video encode";
+
+"video_uploadbuffer" = "Video upload";
+
+"audio_encodebuffer" = "Audio encode";
+
+"audio_uploadbuffer" = "Audio upload";
+
+"bitrate_enable" = "Bitrate Contrl";
+
+"publisher_log" = "pusher log";
+
+"text_log_1" = "CPU usage:";
+"text_log_2" = "Memory usage:";
+"text_log_3" = "Video capture fps:";
+"text_log_4" = "Audio Capture fps：";
+"text_log_5" = "Audio encoder bitrate:";
+"text_log_6" = "Audio encoder fps:";
+"text_log_7" = "Video render fps:";
+"text_log_8" = "Video encoder model:";
+"text_log_9" = "Video encoder bitrate:";
+"text_log_10" = "Video encoder fps:";
+"text_log_11" = "Total fps of video encoder:";
+"text_log_12" = "Total time costs of video encoder:";
+"text_log_13" = "Video encoder settings:";
+"text_log_14" = "Audio output bitrate:";
+"text_log_15" = "Video output bitrate:";
+"text_log_16" = "Total Number of audio cache frames:";
+"text_log_17" = "Total Number of video cache frames:";
+"text_log_18" = "Video upload fps:";
+"text_log_19" = "Audio upload fps:";
+"text_log_20" = "PTS of current uploaded video frame:";
+"text_log_21" = "PTS of current uploaded audio frame PTS:";
+"text_log_22" = "PTS of the last video keyframe:";
+"text_log_23" = "Final video frame in cache:";
+"text_log_24" = "Final audio frame in cache：";
+"text_log_25" = "Total size of data uploaded:";
+"text_log_26" = "Total time costs of pushing";
+"text_log_27" = "Total number of video frames sent:";
+"text_log_28" = "Total number of viedo frames dropped:";
+"text_log_29" = "The times of video frames dropped:";
+"text_log_30" = "Total times of network disconnected:";
+"text_log_31" = "Total times of network reconnected:";
+"text_log_32" = "Video delay duration:";
+"text_log_33" = "Audio delay duration:";
+"text_log_34" = "Size of current frame uploaded";
+"text_log_35" = "Video Audio pts diff：";
+"text_log_36" = "Total upload data size：";
+"text_log_37" = "The max size of video frame in cache:";
+"text_log_38" = "The max size of audio frame in cache:";
+"text_log_39" = "The pts of last video frame which is waiting for sending";
+"text_log_40" = "The pts of last audio frame which is waiting for sending";
+"text_log_41" = "The pts difference of current frame:";
+"text_log_42" = "The cache size of audio encoder";
+"text_log_43" = "The cache size of video encoder";
+"text_log_44" = "The cache size of render queue";
+"text_log_45" = "The average duration of per frame rendered";

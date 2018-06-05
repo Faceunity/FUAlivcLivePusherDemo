@@ -1,0 +1,34 @@
+//
+//  PrefixHeader.pch
+//  AlivcLivePusherTest
+//
+//  Created by lyz on 2017/10/9.
+//  Copyright © 2017年 TripleL. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define AlivcScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define AlivcScreenHeight  [UIScreen mainScreen].bounds.size.height
+#define AlivcSizeWidth(W) (W*(AlivcScreenWidth)/320)
+#define AlivcSizeHeight(H) (H*(AlivcScreenHeight)/568)
+
+#define IPHONEX (AlivcScreenWidth == 375.f && AlivcScreenHeight == 812.f)
+
+#define AlivcRGB(R,G,B)  [UIColor colorWithRed:(R * 1.0) / 255.0 green:(G * 1.0) / 255.0 blue:(B * 1.0) / 255.0 alpha:1.0]
+#define AlivcRGBA(R,G,B,A)  [UIColor colorWithRed:(R * 1.0) / 255.0 green:(G * 1.0) / 255.0 blue:(B * 1.0) / 255.0 alpha:A]
+
+
+#define AlivcTextPushURL @"rtmp://push-videocall.aliyuncs.com/test/stream45"
+
+
+#define AlivcUserDefaultsIndentifierFirst @"AlivcUserDefaultsIndentifierFirst"
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+
+#endif /* PrefixHeader_pch */
