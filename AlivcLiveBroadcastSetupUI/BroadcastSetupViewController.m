@@ -16,9 +16,9 @@
     [super viewDidLoad];
     
     NSString * devCode = [[[[[UIDevice currentDevice] identifierForVendor] UUIDString] substringToIndex:3] lowercaseString];
-    
-    NSString *rtmpSrv = @"rtmp://push-videocall.aliyuncs.com/test/stream998";
-    _rtmpUrl.text = rtmpSrv;
+    int tempI = arc4random()%10000;
+    NSString *tempUrl = [NSString stringWithFormat:@"rtmp://push-demo-rtmp.aliyunlive.com/test/stream%d",tempI];
+    _rtmpUrl.text = tempUrl;
     
     [self.resolutionBar addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     

@@ -1,0 +1,1309 @@
+/* 
+  Localizable.strings
+  AliyunPlayerMediaDemo
+
+  Created by 王凯 on 2017/11/7.
+  Copyright © 2017年 com.alibaba.ALPlayerVodSDK. All rights reserved.
+*/
+
+
+//互动直播
+
+//界面上的中文字符：
+
+"互动直播" = "Live Room";
+"直播" = "living";
+"回放" = "playback";
+"开直播" = "Creat Studio";
+"开始直播" = "start";
+
+
+"流畅" = "FD";
+"标清" = "LD";
+"高清" = "SD";
+"超清" = "HD";
+"2K" = "2K";
+"4K" = "4K";
+"原画" = "OD";
+
+
+//消息相关：%@的符号可以不管，后面的英文翻译出来就好
+"%@被禁言了" = "%@ is banned";
+"%@被解除了禁言" = "%@ is lifted";
+"%@送了一个礼物" = "%@ gave a present";
+"%@因言行不当,已被主播踢出房间" = "%@ has been kicked out of the room by the anchor for his misconduct.";
+"%@进入了直播间" = "%@ join the room";
+"主播禁言了所有人" = "The anchor banned everyone";
+"主播对所有人解除了禁言" = "The anchor lifts the ban on everyone";
+
+//自定义的一些提示：
+"主播创建房间错误" = "ERROR：Failed to create a room";
+"异常：roomID为空" = "ERROR：RoomId is NULL";
+"此用户已经离开本直播间" = "the user is left";
+"用户id为空,此用户数据错误或者为模拟数据" = "ERROR：RoomId is NULL or invalid";
+"请先切换摄像头为后置" = "";
+"麦克风已关闭" = "mic off";
+"麦克风已开启" = "mic on";
+"功能开发中..." = "on the way";
+"你已被主播禁言" = "you are banned";
+"返回的Room id为空，操作无法进行下去了" = "ERROR：RoomId is NULL";
+"成功进入房间" = "join the room success";
+"提示" = "Tips";
+"主播下播了" = "The anchor is left";
+"确定" = "confirm";
+
+//其他
+
+"Player Demo"="Player Demo";
+
+"Basic player"="Basic player";
+"Basic function demo of Vod" = "Basic function demo of Vod";
+"Basic function demo of live" = "Basic function demo of live";
+
+"Advanced player" = "Advanced player";
+"Basic function demo of Vod by using vid and sts" = "Basic function demo of Vod by using vid and palyAuth";
+"Autoplay demo of multi-video by using url" = "Autoplay demo of multi-video by using url";
+"Full screen slide play demo by using url" = "Full screen slide play demo by using url";
+"Breakpoints download demo" = "Breakpoints download demo";
+
+"UI player" = "UI player";
+"Debug tools demo" = "Debug tools demo";
+"Copyright information" = "Copyright information";
+
+
+"Scene List of player" = "Scene List of player";
+"Full UI player demo" = "Full UI player demo";
+
+
+"version" = "version:v3.4.1";
+
+"vid" = "vid";
+"the vid fill in the text field by user or default setting" = "the vid fill in the text field by user or default setting";
+"playAuth" = "playAuth";
+"play_auth_contents" = "the playAuth fill in the text field by user or default setting";
+
+"refresh" = "refresh";
+"Open interface of playing" = "Open interface of playing";
+
+"Back" = "Back";
+//"navigation_back" = "Back";
+//"naviBack" = "back";
+"Log" = "Log";
+
+//"buffer" = "buffer";
+//"buffer_time" = "the current buffering time";
+//"play_time" = "the current play time";
+
+//"video_duration" = "video duration";
+//"start_button" = "Start";
+//"stop_button" = "Stop";
+//"pause_button" = "Pause";
+//"resume_button" = "Resume";
+//"replay_button" = "Replay";
+//"auto_play" = "Auto play";
+//"mute_label" = "Mute";
+//"volume_label" = "Volume";
+//"brightness_label" = "Brightness";
+//"scale_model" = "Scale model";
+//"aspect_fit" = "Aspect fit";
+//"aspect_fill" = "Aspect fill";
+"Get all definition" = "Get all definition";
+//"FD" = "FD";
+//"LD" = "LD";
+//"SD" = "SD";
+//"HD" = "HD";
+//"2K" = "2K";
+//"4K" = "4K";
+//"OD" = "OD";
+"add_video" = "Add";
+"start_download" = "Start";
+"stop_download" = "Stop";
+"delete_downloaded_video" = "Delete";
+"play_downloaded_video" = "Play";
+"download_status" = "Not downloaded";//include not downloaded、download progress、stopped、finished、waiting
+
+
+"download_status_unload" = "not downloaded";//包含未下载、下载进度、已停止、已完成、等待中
+"download_status_stop" = "stopped";
+"download_status_finish" = "finished";
+"download_status_waiting" = "waiting";
+
+"Download all" = "Download all";
+"Delete all" = "Delete all";
+"Cancel" = "Cancel";
+"ok_button" = "OK";
+"ok_button1" = "OK";
+"error" = "ERROR";
+
+
+"start_play" = "Start playing";
+"pause_play" = "Paused";
+"stop_play" = "Stopped";
+"finish_play" = "Video ended";
+"load_start" = "Start loading";
+"load_end" = "Video loaded";
+"get_loaddata" = "Data has fetched";
+"seek_to" = "Video has sought ";
+"start_firstFrame" = "First frame showed";
+
+
+"Error code" = "Error code";
+"Error message" = "Error message";
+"Tips" = "Tips";
+"Cannot repeatly add" = "Cannot repeatly add";
+"Unfinished last time" = "Unfinished last time";
+"Begun" = "Begun";
+"Stopped"="Stopped";
+"Finished" = "Finished";
+"Please request definition list first" = "Please request definition list first";
+"video has downloaded" = "video has downloaded";
+
+
+//
+
+
+"log_start_play" = "Start";
+"log_stop_play" = "Stop";
+"log_pause_play" = "Pause";
+"log_resume_play" = "Resume";
+"log_re_play" = "Replay";
+
+
+//"player_scene_list" = "Basic player";
+
+//"multiple_video_auto_play" = "Autoplay demo of multi-video";
+//"debug_tools" = "Debug tools demo";
+//"ui_player" = "Basic UI Demo";
+
+"copyright_information" = "Copyright information";
+"copyright_license" = "Ⓒ2017 Copyright by Alibaba Cloud, Alibaba Group All rights reserved";
+
+"notreachable" = "Unreachable";
+"clicked_ok" = "OK";
+"clear_message" = "Clear";
+"network" = "The current network is cell-network, whether to continue?";
+"videoName" = "Default url";
+
+
+"alert_show_title_errortitle" = "Error";
+"alert_show_title_cancel" = "cancel";
+"alert_show_title_buttontitles" = "reconnect";
+"play_error" = "Error";
+"play_finish" = "playback is complete！";
+"manual_input_url" = "Enter url manually";
+"input_url_invalid" = "input url invalid";
+"input_playurl" = "Enter url manually";
+"input_url" = "Enter url manually";
+"input playurl" = "input playurl";
+"input mediaPlayer" = "input mediaPlayer";
+
+"For mobile networks, continue to download？" = "For mobile networks, Continue downloading";
+
+
+
+"onVideoPrepared" = "onVideoPrepared";
+"onVideoFirstFrame" = "onVideoFirstFrame";
+"OnVideoFinish" = "OnVideoFinish";
+"OnSeekDone" = "OnSeekDone";
+"OnStartCache" = "OnStartCache";
+"OnEndCache" = "OnEndCache";
+"OnVideoStop" = "onVideoStop";
+"onCircleStart" = "onCircleStart";
+"play failed,error code is" = "play failed,error code is";
+"pause failed,error code is" = "pause failed,error code is";
+"resume failed,error code is" = "resume failed,error code is";
+"stop failed,error code is" = "stop failed,error code is";
+"prepare failed,error code is" = "prepare failed,error code is";
+"reset failed,error code is" = "reset failed,error code is";
+
+//连续播放演示
+"Continuous play demo" = "Continuous play demo";
+"buffer" = "buffer";
+"00:00:00"="00:00:00";
+"con_play" = "Play";
+"con_pause" = "Pause";
+"con_resume" = "Resume";
+"con_stop" = "Stop";
+"con_replay" = "Replay";
+"check_tools" = "test video url by debug tools";
+
+//直播时移
+"Time-shift of live player Demo" = "Time-shift of live player Demo";
+"Mute" = "Mute";
+"Volume" = "Volume";
+"Brightness" = "Brightness";
+"DisplayMode" = "DisplayMode";
+"Aspect fit" = "Aspect fit";
+"Aspect fill" = "Aspect fill";
+"Drop buffer duration" = "Drop buffer duration";
+"ms" = "ms";
+"live" = "live";
+
+//答题直播间
+"answer room" = "Answer room";
+"start answer" = "start answer";
+"Playback settings" = "Playback settings";
+"live room" = "live room";
+"popQuestion" = "popQuestion";
+"popAnswer" = "popAnswer";
+"CLEAR" = "CLEAR";
+"LOG_OK" = "OK";
+"Obsolete" = "Obsolete";
+"Bingo" = "Bingo";
+"Wrong" = "Wrong";
+
+
+// PUSH flow
+
+"live_scene_list" = "Scene list of live";
+
+"live_basic_function" = "PusherSDKV3.3.2";
+
+"live_basic_function_old" = "PusherSDKV1.3";
+
+"screen_record_live" = "screen record live";
+
+"license_declaration" = "License Declaration";
+
+"version" = "Version:v3.3.2";
+
+"pusher_setting" = "Pusher setting";
+
+"input_tips" = "Please enter url or scan two-dimensional code";
+
+"resolution_label" = "Resolution";
+
+"quality_mode_label" = "Quality Mode";
+
+"beauty_mode_label" = "Beauty Mode";
+
+"max_bitrate" = "Max Bitrate";
+
+"target_bitrate" = "Target Bitrate";
+
+"min_bitrate" = "Min Bitrate";
+
+"initial_bitrate" = "Initial Bitrate";
+
+"audio_bitrate" = "Audio Bitrate";
+
+"captrue_fps" = "Captrue Fps";
+
+"min_fps" = "Min Fps";
+
+"audio_sampling_rate" = "Audio SampleRate";
+
+"sound_track" = "Sound Track";
+
+"audio_profile" = "Audio Profile";
+
+"single_track" = "Single Track";
+
+"dual_track" = "Dual Track";
+
+"reconnect_duration" = "Reconnect Duration";
+
+"reconnect_times" = "Reconnect Times";
+
+"landscape_model" = "Orientation";
+
+"push_url_notice_text" = "It is recommended to change push url to avoid error caused by many people using same url";
+
+"front_camera" = "Front camera";
+
+"mirror" = "Mirror";
+
+"watermark" = "Watermark";
+
+"watermark_setting" = "Setting";
+
+"audio_only_push_streaming" = "Audio Only";
+
+"video_only_push_streaming" = "Video Only";
+
+"audio_hardware_encode" = "Audio Hardware Encode";
+
+"background_image" = "Background Image";
+
+"network_weak_image" = "Network Weak Image";
+
+"auto_focus" = "Auto Focus";
+
+"beauty_enable" = "Beauty on";
+
+"hardware_encode" = "Hardware Encode";
+
+"asynchronous_interface" = "Async interface";
+
+"start_preview_button" = "Start preview";
+
+"stop_preview_button" = "Stop preview";
+
+"start_push" = "Start pushing";
+
+"start_button" = "Start";
+
+"pause_button" = "Pause";
+
+"resume_button" = "Resume";
+
+"stop_button" = "Stop";
+
+"more_setting_button" = "More setting";
+
+"repush_button" = "Restart pushing";
+
+"slide_right_view_log_char" = "Slide right to view log";
+
+"slide_left_view_log" = "Slide left to view log chart";
+
+"share_button" = "Share";
+
+"beauty_on" = "Beauty on";
+
+"beauty_off" = "Beauty off";
+
+"beauty_white" = "Whitening";
+
+"beauty_skin_smooth" = "Buffing";
+
+"beauty_cheekpink" = "CheekPink";
+
+"beauty_thinface" = "ThinFace";
+
+"beauty_shortenface" = "ShortenFace";
+
+"beauty_bigeye" = "BigEye";
+
+"beauty_ruddy" = "Ruddy";
+
+"beaut_brightness" = "Brightness";
+
+"beauty_saturation" = "Saturation";
+
+"save_log" = "Save log";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"zoom" = "Zoom";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"beauty_button" = "Beauty";
+
+"auto_bitrate" = "Auto Birtate";
+
+"user_main_stream" = "user main stream";
+
+"user_mix_stream" = "user mix stream";
+
+"auto_resolution" = "Auto Resolution";
+
+"sweep_code" = "Sweep code";
+
+"preview_mirror" = "Preview Mirror";
+
+"push_mirror" = "Push Mirror";
+
+"keyframe_interval" = "GOP";
+
+"flash" = "Flash";
+
+"render" = "render";
+
+"video_encode" = "video_encode";
+
+"audio_encode" = "audio_encode";
+
+"sweep_code_label" = "Please put the code in the frame to scan";
+
+"mirror_button_open" = "开启镜像";
+
+"mirror_button_close" = "关闭镜像";
+
+"log_button_open" = "开启日志";
+
+"log_button_close" = "关闭日志";
+
+"no_camera_permission" = "Camera usage is not permitted, please open first";
+
+"no_record_audio_permission" = "Audio is not permitted to record, please open first";
+
+"dialog_title" = "Error tips";
+
+"ok" = "OK";
+
+"network_poor" = "The network is unstable, please quit or try again";
+
+"network_recovery" = "The network has recovered";
+
+"reconnect_start" = "Start reconnecting";
+
+"reconnect_fail" = "Reconnection failed";
+
+"connect_fail" = "Connect failed";
+
+"reconnect_success" = "Reconnection succeed";
+
+"senddata_timeout" = "Sending data timeout";
+
+"restart_success" = "Restart successfully";
+
+"system_error" = "System error:";
+
+"sdk_error" = "SDK error：";
+
+"argument_exception" = "Arguments error";
+
+"state_exception" = "States error";
+
+"bite_error" = "Bitrate setting error";
+
+"drop_frame" = "Drop frame";
+
+"adjust_bitrate" = "Bitrate adjusted";
+
+"adjust_fps" = "Fps adjusted";
+
+"start_drop_gop" = "Start dropping GOP";
+
+"stop_drop_gop" = "Stop dropping GOP";
+
+"bit_control" = "Bitrate control";
+
+"min_control_interval" = "Min interval of bitrate control";
+
+"upbps_duration" = "Min interval of upbps";
+
+"upbps_min_pree" = "Percentage of upbps";
+
+"upbps_size" = "Size of upbps";
+
+"control_times" = "Times of bitrate control";
+
+"url_empty" = "Please enter url";
+
+"start_preview_log" = "Start preview";
+
+"connectRecovery_log" = "Network recovery";
+
+"stop_preview_log" = "Stop preview";
+
+"start_push_log" = "Start push";
+
+"stop_push_log" = "Stop push";
+
+"pause_push_log" = "Pause";
+
+"resume_push_log" = "Resume";
+
+"first_frame_log" = "First frame show";
+
+"push_url_log" = "Push url";
+
+"ispushing_log" = "Pushing";
+
+"restart_push_log" = "Restart Push";
+
+"exit" = "Exit";
+
+"reconnect_button" = "Reconnect";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"render" = "Render";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"total_time" = "Total consuming";
+
+"audio_fps" = "Audio fps";
+
+"video_fps" = "Video fps";
+
+"bitrate" = "Bitrate";
+
+"video_encode" = "Video encode";
+
+"audio_encode" = "Audio encode";
+
+"buffer" = "Buffer";
+
+"video_renderbuffer" = "Video render";
+
+"video_encodebuffer" = "Video encode";
+
+"video_uploadbuffer" = "Video upload";
+
+"audio_encodebuffer" = "Audio encode";
+
+"audio_uploadbuffer" = "Audio upload";
+
+"bitrate_enable" = "Bitrate Contrl";
+
+"publisher_log" = "pusher log";
+
+"text_log_1" = "CPU usage:";
+"text_log_2" = "Memory usage:";
+"text_log_3" = "Video capture fps:";
+"text_log_4" = "Audio Capture fps：";
+"text_log_5" = "Audio encoder bitrate:";
+"text_log_6" = "Audio encoder fps:";
+"text_log_7" = "Video render fps:";
+"text_log_8" = "Video encoder model:";
+"text_log_9" = "Video encoder bitrate:";
+"text_log_10" = "Video encoder fps:";
+"text_log_11" = "Total fps of video encoder:";
+"text_log_12" = "Total time costs of video encoder:";
+"text_log_13" = "Video encoder settings:";
+"text_log_14" = "Audio output bitrate:";
+"text_log_15" = "Video output bitrate:";
+"text_log_16" = "Total Number of audio cache frames:";
+"text_log_17" = "Total Number of video cache frames:";
+"text_log_18" = "Video upload fps:";
+"text_log_19" = "Audio upload fps:";
+"text_log_20" = "PTS of current uploaded video frame:";
+"text_log_21" = "PTS of current uploaded audio frame PTS:";
+"text_log_22" = "PTS of the last video keyframe:";
+"text_log_23" = "Final video frame in cache:";
+"text_log_24" = "Final audio frame in cache：";
+"text_log_25" = "Total size of data uploaded:";
+"text_log_26" = "Total time costs of pushing";
+"text_log_27" = "Total number of video frames sent:";
+"text_log_28" = "Total number of viedo frames dropped:";
+"text_log_29" = "The times of video frames dropped:";
+"text_log_30" = "Total times of network disconnected:";
+"text_log_31" = "Total times of network reconnected:";
+"text_log_32" = "Video delay duration:";
+"text_log_33" = "Audio delay duration:";
+"text_log_34" = "Size of current frame uploaded";
+"text_log_35" = "Video Audio pts diff：";
+"text_log_36" = "Total upload data size：";
+"text_log_37" = "The max size of video frame in cache:";
+"text_log_38" = "The max size of audio frame in cache:";
+"text_log_39" = "The pts of last video frame which is waiting for sending";
+"text_log_40" = "The pts of last audio frame which is waiting for sending";
+"text_log_41" = "The pts difference of current frame:";
+"text_log_42" = "The cache size of audio encoder";
+"text_log_43" = "The cache size of video encoder";
+"text_log_44" = "The cache size of render queue";
+"text_log_45" = "The average duration of per frame rendered";
+
+/*vodplay-播放器*/
+"Retry" = "Retry";
+"Replay" = "Replay";
+"Play" = "Play";
+"Fast speed play" = "Fast speed play";
+"Nomal" = "Nomal";
+"1.25X" = "1.25X";
+"1.5X" = "1.5X";
+"2X" = "2X";
+"the current video has swiched to" = "the current video has swiched to";
+"speed rate" = "speed rate";
+"loading"="loading...";
+
+
+"left" = "left side";
+"brightness" = "brightness";
+"control" = "control";
+"center" = "center";
+"progress" = "progress";
+"right" = "right side";
+"volume" = "volume";
+
+"VOD_FD" = "FD";
+"VOD_LD" = "LD";
+"VOD_SD" = "SD";
+"VOD_HD" = "HD";
+"VOD_2K" = "2K";
+"VOD_4K" = "4K";
+"VOD_OD" = "OD";
+
+
+"Watch again, please click replay" = "Watch again, please click replay";
+"The current network is not good. Please click replay later" = "The current network is not good. Please click replay later";
+"No network connection, check the network, click replay" =  "No network connection, check the network, click replay";
+"Video loading error, please click replay" = "Video loading error, please click replay";
+"For mobile networks, click play" =  "For mobile networks, click play";
+
+/*livePush-直播推流*/
+"screen_record_notice_text" = "Use Screen Record：\nPlease start the screen record fron control center->select AlivcLiveBroadcast->adjust the param at this menu then press start push button";
+
+"live_scene_list" = "Scene list of live";
+
+"live_basic_function" = "PusherSDKV3.4.0";
+
+"live_basic_function_old" = "PusherSDKV1.3";
+
+"license_declaration" = "License Declaration";
+
+"version" = "Version:v3.3.5";
+
+"push_standard" = "Standard";
+"push_professional" = "Professional";
+"push_high" = "High";
+"push_fluency" = "fluency";
+"push_custom" = "custom";
+"push_internet_music" = "Internet music";
+"push_accompaniment" = "Accompany";
+"push_voice" = "Voice";
+"push_resume" = "Resume";
+"push_stop" = "Stop";
+"push_start" = "Start";
+"push_close_loop" = "Close Loop";
+"push_open_loop" = "Open Loop";
+"push_close_mute" = "Close Mute";
+"push_open_mute" = "Open Mute";
+"push_close_ears_back" = "Close Ears";
+"push_open_ears_back" = "Open Ears";
+"push_close_audio_denoise" = "Close Denoise";
+"push_open_audio_denoise" = "Open Denoise";
+
+"pusher_setting" = "Pusher setting";
+
+"input_tips" = "Please enter url or scan two-dimensional code";
+
+"resolution_label" = "Resolution";
+
+"quality_mode_label" = "Quality Mode";
+
+"beauty_mode_label" = "Beauty Mode";
+
+"max_bitrate" = "Max Bitrate";
+
+"target_bitrate" = "Target Bitrate";
+
+"min_bitrate" = "Min Bitrate";
+
+"initial_bitrate" = "Initial Bitrate";
+
+"audio_bitrate" = "Audio Bitrate";
+
+"captrue_fps" = "Captrue Fps";
+
+"min_fps" = "Min Fps";
+
+"audio_sampling_rate" = "Audio SampleRate";
+
+"sound_track" = "Sound Track";
+
+"audio_profile" = "Audio Profile";
+
+"single_track" = "Single Track";
+
+"dual_track" = "Dual Track";
+
+"reconnect_duration" = "Reconnect Duration";
+
+"reconnect_times" = "Reconnect Times";
+
+"landscape_model" = "Orientation";
+
+"push_url_notice_text" = "It is recommended to change push url to avoid error caused by many people using same url";
+
+"front_camera" = "Front camera";
+
+"mirror" = "Mirror";
+
+"watermark" = "Watermark";
+
+"watermark_setting" = "Setting";
+
+"audio_only_push_streaming" = "Audio Only";
+
+"video_only_push_streaming" = "Video Only";
+
+"audio_hardware_encode" = "Audio Hardware Encode";
+
+"background_image" = "Background Image";
+
+"network_weak_image" = "Network Weak Image";
+
+"auto_focus" = "Auto Focus";
+
+"beauty_enable" = "Beauty on";
+
+"hardware_encode" = "Hardware Encode";
+
+"asynchronous_interface" = "Async interface";
+
+"start_preview_button" = "Start preview";
+
+"stop_preview_button" = "Stop preview";
+
+"start_push" = "Start pushing";
+
+"start_button" = "Start";
+
+"pause_button" = "Pause";
+
+"resume_button" = "Resume";
+
+"stop_button" = "Stop";
+
+
+"more_setting_button" = "More setting";
+
+"repush_button" = "Restart pushing";
+
+"slide_right_view_log_char" = "Slide right to view log";
+
+"slide_left_view_log" = "Slide left to view log chart";
+
+"share_button" = "Share";
+
+"add_button" = "add tags";
+
+"remove_button" = "remove tags";
+
+"tile" = "tile";
+
+"fit" = "fit";
+
+"cut" = "cut";
+
+"beauty_on" = "Beauty on";
+
+"beauty_off" = "Beauty off";
+
+"beauty_white" = "Whitening";
+
+"beauty_skin_smooth" = "Buffing";
+
+"beauty_cheekpink" = "CheekPink";
+
+"beauty_thinface" = "ThinFace";
+
+"beauty_shortenface" = "ShortenFace";
+
+"beauty_bigeye" = "BigEye";
+
+"beauty_ruddy" = "Ruddy";
+
+"beaut_brightness" = "Brightness";
+
+"beauty_saturation" = "Saturation";
+
+"save_log" = "Save log";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"zoom" = "Zoom";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"beauty_button" = "Beauty";
+
+"auto_bitrate" = "Auto Birtate";
+
+"user_main_stream" = "user main stream";
+
+"user_mix_stream" = "user mix stream";
+
+"auto_resolution" = "Auto Resolution";
+
+"sweep_code" = "Sweep code";
+
+"preview_mirror" = "Preview Mirror";
+
+"push_mirror" = "Push Mirror";
+
+"keyframe_interval" = "GOP";
+
+"flash" = "Flash";
+
+"render" = "render";
+
+"video_encode" = "video_encode";
+
+"audio_encode" = "audio_encode";
+
+"sweep_code_label" = "Please put the code in the frame to scan";
+
+"mirror_button_open" = "开启镜像";
+
+"mirror_button_close" = "关闭镜像";
+
+"log_button_open" = "开启日志";
+
+"log_button_close" = "关闭日志";
+
+"no_camera_permission" = "Camera usage is not permitted, please open first";
+
+"no_record_audio_permission" = "Audio is not permitted to record, please open first";
+
+"dialog_title" = "Error tips";
+
+"ok" = "OK";
+
+"network_poor" = "The network is unstable, please quit or try again";
+
+"network_recovery" = "The network has recovered";
+
+"reconnect_start" = "Start reconnecting";
+
+"reconnect_fail" = "Reconnection failed";
+
+"connect_fail" = "Connect failed";
+
+"reconnect_success" = "Reconnection succeed";
+
+"senddata_timeout" = "Sending data timeout";
+
+"restart_success" = "Restart successfully";
+
+"system_error" = "System error:";
+
+"sdk_error" = "SDK error：";
+
+"argument_exception" = "Arguments error";
+
+"state_exception" = "States error";
+
+"bite_error" = "Bitrate setting error";
+
+"drop_frame" = "Drop frame";
+
+"adjust_bitrate" = "Bitrate adjusted";
+
+"adjust_fps" = "Fps adjusted";
+
+"start_drop_gop" = "Start dropping GOP";
+
+"stop_drop_gop" = "Stop dropping GOP";
+
+"bit_control" = "Bitrate control";
+
+"min_control_interval" = "Min interval of bitrate control";
+
+"upbps_duration" = "Min interval of upbps";
+
+"upbps_min_pree" = "Percentage of upbps";
+
+"upbps_size" = "Size of upbps";
+
+"control_times" = "Times of bitrate control";
+
+"url_empty" = "Please enter url";
+
+"start_preview_log" = "Start preview";
+
+"connectRecovery_log" = "Network recovery";
+
+"stop_preview_log" = "Stop preview";
+
+"start_push_log" = "Start push";
+
+"stop_push_log" = "Stop push";
+
+"pause_push_log" = "Pause";
+
+"resume_push_log" = "Resume";
+
+"first_frame_log" = "First frame show";
+
+"push_url_log" = "Push url";
+
+"ispushing_log" = "Pushing";
+
+"restart_push_log" = "Restart Push";
+
+"exit" = "Exit";
+
+"reconnect_button" = "Reconnect";
+
+"modules_time_consuming" = "Time consuming";
+
+"modules_audio_fps" = "Audio fps";
+
+"modules_video_fps" = "Video fps";
+
+"modules_bitrate" = "Bitrate";
+
+"capture" = "Capture";
+
+"render" = "Render";
+
+"encode" = "Encode";
+
+"push" = "Push";
+
+"total_time" = "Total consuming";
+
+"audio_fps" = "Audio fps";
+
+"video_fps" = "Video fps";
+
+"bitrate" = "Bitrate";
+
+"video_encode" = "Video encode";
+
+"audio_encode" = "Audio encode";
+
+"buffer" = "Buffer";
+
+"video_renderbuffer" = "Video render";
+
+"video_encodebuffer" = "Video encode";
+
+"video_uploadbuffer" = "Video upload";
+
+"audio_encodebuffer" = "Audio encode";
+
+"audio_uploadbuffer" = "Audio upload";
+
+"bitrate_enable" = "Bitrate Contrl";
+
+"publisher_log" = "pusher log";
+
+"text_log_1" = "CPU usage:";
+"text_log_2" = "Memory usage:";
+"text_log_3" = "Video capture fps:";
+"text_log_4" = "Audio Capture fps：";
+"text_log_5" = "Audio encoder bitrate:";
+"text_log_6" = "Audio encoder fps:";
+"text_log_7" = "Video render fps:";
+"text_log_8" = "Video encoder model:";
+"text_log_9" = "Video encoder bitrate:";
+"text_log_10" = "Video encoder fps:";
+"text_log_11" = "Total fps of video encoder:";
+"text_log_12" = "Total time costs of video encoder:";
+"text_log_13" = "Video encoder settings:";
+"text_log_14" = "Audio output bitrate:";
+"text_log_15" = "Video output bitrate:";
+"text_log_16" = "Total Number of audio cache frames:";
+"text_log_17" = "Total Number of video cache frames:";
+"text_log_18" = "Video upload fps:";
+"text_log_19" = "Audio upload fps:";
+"text_log_20" = "PTS of current uploaded video frame:";
+"text_log_21" = "PTS of current uploaded audio frame PTS:";
+"text_log_22" = "PTS of the last video keyframe:";
+"text_log_23" = "Final video frame in cache:";
+"text_log_24" = "Final audio frame in cache：";
+"text_log_25" = "Total size of data uploaded:";
+"text_log_26" = "Total time costs of pushing";
+"text_log_27" = "Total number of video frames sent:";
+"text_log_28" = "Total number of viedo frames dropped:";
+"text_log_29" = "The times of video frames dropped:";
+"text_log_30" = "Total times of network disconnected:";
+"text_log_31" = "Total times of network reconnected:";
+"text_log_32" = "Video delay duration:";
+"text_log_33" = "Audio delay duration:";
+"text_log_34" = "Size of current frame uploaded";
+"text_log_35" = "Video Audio pts diff：";
+"text_log_36" = "Total upload data size：";
+"text_log_37" = "The max size of video frame in cache:";
+"text_log_38" = "The max size of audio frame in cache:";
+"text_log_39" = "The pts of last video frame which is waiting for sending";
+"text_log_40" = "The pts of last audio frame which is waiting for sending";
+"text_log_41" = "The pts difference of current frame:";
+"text_log_42" = "The cache size of audio encoder";
+"text_log_43" = "The cache size of video encoder";
+"text_log_44" = "The cache size of render queue";
+"text_log_45" = "The average duration of per frame rendered";
+
+
+// 短视频模块
+
+"record_brand" = "拍摄"; //品牌页面拍摄入口（非用户）
+"magic_camera_brand" = "魔法相机"; //品牌也魔法相机入口（非用户）
+"import_entry_brand" = "导入编辑"; //品牌页导入编辑入口（非用户）
+"cut_entry_brand" = "导入裁剪"; //品牌页导入裁剪入口（非用户）
+"live_entry_brand" = "直播"; //品牌也直播入口（非用户）
+"ui_component_brand" = "其他"; //品牌页其他入口（非用户）
+"duration_current_record" = ""; //录制界面，当前录制时间
+"video_record" = "视频"; //录制界面，录制视频文案
+"photo_record" = "照片"; //录制界面，拍摄照片文案
+"edit_nav_edit" = "编辑"; //编辑界面导航栏标题
+"finish_subtitle_edit" = "完成"; //字幕编辑完成按钮文案
+"fill_subtitle_edit" = "填充"; //字幕编辑颜色填充
+"border_subtitle_edit" = "描边"; //字幕编辑描边颜色
+"time_positon_edit" = ""; //编辑界面当前帧的时间
+"hide_elements_edit" = "点击屏幕隐藏所有功能按钮"; //编辑界面隐藏界面元素提醒文案
+"show_elements_edit" = "点击屏幕显示所有功能按钮"; //编辑界面显示界面元素提醒下文案
+"speed_edit" = "速度"; //编辑界面变速功能速度调节文案
+"times_speed_edit" = "1.0X"; //编辑界面变速倍数文案
+"more_motion_sticker_nav_edit" = "更多动图"; //更多动图页面导航栏文案
+"more_subtitle_nav_edit" = "更多字幕"; //更多字幕页面导航栏文案
+"more_mv_nav_edit" = "更多MV"; //更多MV页面导航栏文案
+"effect_mananger_nav_edit" = "特效管理"; //特效管理页面导航栏文案
+"motion_sticker_effect_manager" = "动图"; //特效管理页面动图tab文案
+"subtitle_effect_manager" = "字幕"; //特效管理页面字幕tab文案
+"font_effect_manager" = "字体"; //特效管理页面字体tab文案
+"mv_effect_manager" = "MV"; //特效管理页面MVtab文案
+"music_effect_manager" = "音乐"; //特效管理页面音乐tab文案
+"delete_effect_manager" = "删除"; //特效管理页面删除特效文案
+"finish_effect_manager" = "完成"; //特效管理页面完成按钮文案
+"use_effect_edit" = "使用"; //使用特效的文案（这里使用各种特效统一）
+"download_effect_edit" = "下载"; //下载特效的文案（这里各种特效统一）
+"mute_music_edit" = "静音"; //音乐界面静音按钮文案
+"original_music_edit" = "原音"; //音乐界面音乐调节原音
+"music_edit" = "音乐"; //音乐界面音乐调节音乐文案
+"no_music_edit" = "No Music"; //音乐界面无音乐按钮文案
+"dub_music_edit" = "配音"; //音乐界面配音按钮文案
+"my_music_edit" = "我的音乐"; //音乐界面我的音乐tab文案
+"local_music_edit" = "本地音乐"; //音乐界面本地音乐tab文案
+"camera_roll__nav_import" = "胶卷相机"; //导入界面胶卷相机导航栏文案
+"cancel_camera_import" = "取消"; //导入界面胶圈相机取消按钮文案
+"total_duration_label_import" = "总时长"; //总时长提示文案
+"total_duration_import" = ""; //总时长时间显示（如03:12:21)
+"reorder_import" = "长按以拖动排序"; //长按拖动文案提醒
+"next_camera_roll_import" = "下一步"; //胶卷相机下一步按钮文案
+"duration_video_import" = ""; //导入视频单个视频时长文案
+"message_max_duration_import" = "请控制总时长在5分钟之内"; //导入总时长过程时提醒文案
+"time_positon_cut" = ""; //裁剪界面当前帧的时间（拖动剪刀时显示，跟随）
+
+"minDuration" = "最小时长";
+"minDuration_placeholder" = "最小时长大于0,默认值2s";
+"maxDuration" = "最大时长";
+"maxDuration_placeholder" = "建议不超过300s,默认值30s";
+"key_frame_interval" = "关键帧间隔";
+"key_frame_interval_placeholder" = "建议1-300，默认5";
+"video_quality" = "视频质量";
+"resolution" = "分辨率";
+"start_recording" = "start";
+
+"video_quality_low_Configure" = "低"; //导入参数配置界面 视频质量
+"video_quality_mid_Configure" = "中"; //导入参数配置界面 视频质量
+"video_quality_high_Configure" = "高"; //导入参数配置界面 视频质量
+"video_quality_skyhigh_Configure" = "极高"; //导入参数配置界面 视频质量
+"video_film_composition" = "相机胶卷"; //导入界面相机胶卷title
+"nonsupport_video_type_composition" = "不支持的视频格式"; // 导入界面选择不支持的视频格式弹窗文案
+"video_affirm_common" = "确定"; // 确认 通用
+"video_reminder_common" = "提示"; // 提示 通用
+"video_error_edit" = "该视频为错误视频"; // 编辑界面错误视频 文案
+"video_is_exporting_edit" = "正在导出视频"; // 编辑界面导出视频弹窗文案
+"video_exporting_finish_edit" = "导出完成"; // 编辑界面导出完成文案
+"video_exporting_finish_fail_edit" = "导出失败"; // 编辑界面导出完成文案
+"video_exporting_check_autho" = "请检查是否有相册权限或其他";
+"video_local_save_edit" = "已保存到手机相册"; // 编辑界面保存到手机相册文案
+"video_remove_mv_edit" = "请先移除MV效果再添加音乐"; // 编辑界面MV与音乐不能叠加弹窗文案
+"video_title_edit" = "编辑"; // 编辑界面title
+"music_none_lable_edit" = "无音乐"; // 音乐选择界面 无音乐按钮
+"music_import_itunes_edit" = "当前无音乐，请在iTunes导入音乐"; // itunes无音乐时提示导入音乐文案
+"aliyun_res_copy" = "资源拷贝中";
+"aliyun_compose" = "合成中";
+"aliyun_network_not_connect" = "网络没有连接，请检查网络";
+"aliyun_download_failed" = "下载失败";
+"aliyun_permission_camera_mic" = "请求相机和麦克风权限";
+"aliyun_filter_null" = "原片";
+"aliyun_bit_rate" = "码率";
+"aliyun_frame_rate" = "帧率";
+"aliyun_ratio" = "视频比例";
+"aliyun_bit_rate_hint" = "建议600-2000，默认1000";
+"aliyun_frame_rate_hint" = "建议20-30，默认25";
+"aliyun_bitrate_hint" = "默认为0，根据视频质量参数计算";
+"aliyun_start_record" = "启动录制";
+"aliyun_record_resolution_360p" = "360p";
+"aliyun_record_resolution_480p" = "480p";
+"aliyun_record_resolution_540p" = "540p";
+"aliyun_record_resolution_720p" = "720p";
+"aliyun_record_ratio_1_1" = "1:1";
+"aliyun_reocrd_ratio_9_16" = "9:16";
+"aliyun_record_ratio_3_4" = "3:4";
+"aliyun_camera_permission_tip" = "请开启摄像头权限";
+"aliyun_no_free_memory" = "剩余磁盘空间不足";
+"aliyun_select_music" = "选择音乐";
+"aliyun_online_music" = "在线音乐";
+"aliyun_rate_very_slow" = "极慢";
+"aliyun_rate_slow" = "慢";
+"aliyun_rate_standard" = "标准";
+"aliyun_rate_fast" = "快";
+"aliyun_rate_very_fast" = "极快";
+"aliyun_delete" = "回删";
+"aliyun_video_codec" = "视频编码方式";
+"aliyun_hardware_encoder" = "硬编";
+"aliyun_openh264_encoder" = "OpenH264软编";
+"aliyun_ffmpeg_encoder" = "FFmpeg软编";
+"crop_mode" = "裁剪模式";
+"mode_fill" = "画面填充";
+"mode_crop" = "画面裁剪";
+"start_import" = "开始导入";
+"resolution_1_1" = "540*540";
+"resolution_3_4" = "540*720";
+"resolution_9_16" = "540*960";
+"wait" = "请稍候";
+"message_max_duration_import" = "视频总时长不超过5分钟，请裁剪后继续!";
+"please_select_video" = "请选择视频";
+"edit_nav_save_and_share" = "保存／分享";
+"qupai_text_count_outof" = "字数超出限制";
+"more" = "更多";
+"timeline_curr_time" = "%1$02d:%2$02d";
+"material_downloading_failure" = "素材下载失败！";
+"transcode" = "转码中";
+"not_supported_audio" = "不支持的音频格式";
+"not_supported_pixel_format" = "不支持的文件";
+"publish" = "发布";
+"video_composeing_cancel_or_go" = "正在进行视频合成，确定要放弃合成吗？";
+"goback_to_editor" = "返回编辑";
+"go_ahead_compose" = "继续合成";
+"select_cover" = "选择封面";
+"composing" = "视频合成中";
+"not_shutdown_app" = "请不要关闭应用";
+"uploading" = "正在上传 0%";
+"countoflimit" = "最多不超过20个字";
+"compose_success" = "合成成功";
+"compose_failed" = "合成失败";
+"upload_success" = "上传成功";
+"upload_failed" = "上传失败";
+"backtoeditorandtryagain" = "请返回编辑稍后再试";
+"input_video_desc" = "你可以在合成中添加视频描述...";
+"edit_cover" = "选择封面";
+"my_video" = "我的视频";
+"aliyun_svideo_filter" = "滤镜";
+"aliyun_svideo_effect" = "特效";
+"aliyun_svideo_time_effect_moment" = "某刻";
+"aliyun_svideo_time_effect_all" = "全程";
+"aliyun_svideo_time_effect_not_support" = "时间特效不支持多段视频";
+"aliyun_svideo_editor_init_failed" = "编辑器初始化失败";
+
+//直播互动
+"User Setting" = "User Setting";
+"Click to Change Display Image" = "Click to Change Display Image";
+"Switch User" = "Switch User";
+"Nickname" = "Nickname";
+"Done" = "Done";
+"Interactive Stream" = "Interactive Stream";
+"Dislike" = "Dislike";
+"Live" = "Live";
+"Playback" = "Playback";
+"Enter Stream Room" = "Enter Stream Room";
+"Send" = "Send";
+"Start Streaming" = "Start Streaming";
+"Smooth" = "Smooth";
+"SD" = "SD";
+"HD" = "HD";
+"Face Filter" = "Face Filter";
+"Makeup" = "Makeup";
+"Skin Polishing" = "Skin Polishing";
+"Skin Whitening" = "Skin Whitening";
+"Skin Shining" = "Skin Shining";
+"Lip Glow" = "Lip Glow";
+"Eye Widening" = "Eye Widening";
+"Face Slimming" = "Face Slimming";
+"Chin Reducing" = "Chin Reducing";
+"Flash Enabled" = "Flash Enabled";
+"Flash Disabled" = "Flash Disabled";
+"Mute" = "Mute";
+"Remove User" = "Remove User";
+"Blacklist" = "Blacklist";
+"Has been muted" = "Has been muted";
+"You have been removed from the room by the caster" = "You have been removed from the room by the caster";
+"OK" = "OK";
+"Microphone Off" = "Microphone Off";
+"Microphone On" = "Microphone On";
+"Click to Apply Makeup" = "Click to Apply Makeup";
+"Let's Chat" = "Let's Chat";
+
+"live_room" = "Live Room";
+"alivc_yun_video" = "ApsaraVideo";
+"host_leave_room" = "The anchor left the room";
+"change_new_user" = "You have replaced a new user";
+"nick_all_empty" = "nickname can't empty";
+"nick_no_more_than_8" = "nicknames cannot exceed 8 Chinese alphanumeric characters or symbols";
+"nick_contain_emotion" = "nicknames cannot contain emotions";
+"tips" = "tips";
+"it_is_ok" = "OK";
+"user_enter" = "enter stream room";
+"user_leave" = "leave stream room";
+"user_has_been_remove" = "has been removed, because of misconduct";
+"enter_success" = "You have been entered the room";
+"Function is developing" = "Function is developing";
+"you_removed" = "You have been removed";
+
+"left_room" = "The user has left the room";
+"kickout_tip" = "The user has been kicked out of the room by the host because of his actions";
+"inappropriate_words" = "Inappropriate words and deeds";
+"kickout_success" = "Kicked out successfully";
+"relive_kickout_success" = "Unlock kicked out successfully";
+"parsing_error" = "Parsing error";
+"host_enter_room" = "Host enter room";
+"live_ended" = "Live broadcast ended";
+
+"fail_micophone" = "Failed to get microphone permission";
+"no_auth_micophone" = "Microphone does not have permission";
+"fail_camera" = "Failed to get camera permission";
+"no_auth_camera" = "Camera does not have permission";
+"fail_mic_camera" = "Failed to get camera, microphone permission";
+"no_auth_mic_camera" = "Camera does not have permission, microphone does not have permission";
+
+
+"live_room" = "Live Room";
+"alivc_yun_video" = "ApsaraVideo";
+"host_leave_room" = "The anchor left the room";
+"change_new_user" = "You have replaced a new user";
+"nick_all_empty" = "nickname can't empty";
+"nick_no_more_than_8" = "nicknames cannot exceed 8 Chinese alphanumeric characters or symbols";
+"nick_contain_emotion" = "nicknames cannot contain emotions";
+"tips" = "tips";
+"it_is_ok" = "OK";
+"user_enter" = "enter stream room";
+"user_leave" = "leave stream room";
+"user_has_been_remove" = "has been removed, because of misconduct";
+"enter_success" = "You have been entered the room";
+"Function is developing" = "Function is developing";
+"you_removed" = "You have been removed";
+
+"left_room" = "The user has left the room";
+"kickout_tip" = "The user has been kicked out of the room by the host because of his actions";
+"inappropriate_words" = "Inappropriate words and deeds";
+"kickout_success" = "Kicked out successfully";
+"relive_kickout_success" = "Unlock kicked out successfully";
+"parsing_error" = "Parsing error";
+"host_enter_room" = "Host enter room";
+"live_ended" = "Live broadcast ended";
+
+"fail_micophone" = "Failed to get microphone permission";
+"no_auth_micophone" = "Microphone does not have permission";
+"fail_camera" = "Failed to get camera permission";
+"no_auth_camera" = "Camera does not have permission";
+"fail_mic_camera" = "Failed to get camera, microphone permission";
+"no_auth_mic_camera" = "Camera does not have permission, microphone does not have permission";
+
+"note_city_Singapore" = "Node：Singapore";
+"note_city_Shanghai" = "Node：Shanghai";
+"note_city_Daily" = "Node：Daily";
+"note_city_PreRelease" = "Node：PreRelease";
+
+"Connect" = "Connect";
+"XXX people are trying to connect." = "XXX people are trying to connect.";
+"Connecting…" = "Connecting…";
+"Waiting for a connection…" = "Waiting for a connection…";
+"You have been removed from the connection." = "You have been removed from the connection.";
+"Are you sure you want to end the connection with XXX?" = "Are you sure you want to end the connection with XXX?";
+"Connection in progress... Are you sure you want to quit?" = "Connection in progress... Are you sure you want to quit?";
+"XXX has refused your connection request. Please try again later." = "XXX has refused your connection request. Please try again later.";
+"Disconnect" = "Disconnect";
+"The connection is ended." = "The connection is ended.";
+"The connection with XXX has been ended." = "The connection with XXX has been ended.";
+"Unable to connect. Please try again later." = "Unable to connect. Please try again later.";

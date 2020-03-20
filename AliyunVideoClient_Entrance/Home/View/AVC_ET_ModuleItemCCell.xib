@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AVC_ET_ModuleItemCCell" id="gTV-IL-0wX" customClass="AVC_ET_ModuleItemCCell">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjQ-rx-8aV">
+                        <rect key="frame" x="8" y="16" width="41" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sjQ-rx-8aV" secondAttribute="height" id="Af4-qY-GTN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apsara V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-Nl-t6s">
+                        <rect key="frame" x="8" y="95" width="69.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sjQ-rx-8aV" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.3" id="XfY-0m-Mov"/>
+                <constraint firstItem="HKf-Nl-t6s" firstAttribute="leading" secondItem="sjQ-rx-8aV" secondAttribute="leading" id="jWc-f7-DC2"/>
+                <constraint firstItem="sjQ-rx-8aV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="uCq-do-cuR"/>
+                <constraint firstAttribute="bottom" secondItem="HKf-Nl-t6s" secondAttribute="bottom" constant="20" id="x2p-Vk-ZbE"/>
+                <constraint firstItem="sjQ-rx-8aV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="zFl-ZE-a1r"/>
+            </constraints>
+            <size key="customSize" width="187" height="183"/>
+            <connections>
+                <outlet property="moduleImageView" destination="sjQ-rx-8aV" id="UXC-7q-ILl"/>
+                <outlet property="moduleLabel" destination="HKf-Nl-t6s" id="p0b-T3-HAN"/>
+            </connections>
+            <point key="canvasLocation" x="102" y="88"/>
+        </collectionViewCell>
+    </objects>
+</document>

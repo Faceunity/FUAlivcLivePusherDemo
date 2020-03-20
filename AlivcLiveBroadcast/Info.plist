@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Aliyun.DemoAlivcLivePusherv3.3.5.AlivcLiveBroadcast</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.broadcast-services</string>
+		<string>com.apple.broadcast-services-upload</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>SampleHandler</string>
 		<key>RPBroadcastProcessMode</key>
