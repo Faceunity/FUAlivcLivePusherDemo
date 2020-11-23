@@ -13,6 +13,7 @@
 #include <sys/time.h>
 
 #import <AlivcLivePusher/AlivcLivePusherHeader.h>
+
 #import <AlivcLibFace/AlivcLibFaceManager.h>
 #import <ALivcLibBeauty/AlivcLibBeautyManager.h>
 #import "AlivcLiveBeautifySettingsViewController.h"
@@ -35,8 +36,11 @@
 
 /**         ---- FaceUnity ----         **/
 #import "FUManager.h"
-#import <FUAPIDemoBar/FUAPIDemoBar.h>
+#import "FUAPIDemoBar.h"
 /**         ---- FaceUnity ----         **/
+
+
+#import "FUTestRecorder.h"
 
 
 @interface AlivcLivePusherViewController () <AlivcPublisherViewDelegate, AlivcMusicViewDelegate,AlivcAnswerGameViewDelegate,UIAlertViewDelegate,AlivcLivePusherInfoDelegate,AlivcLivePusherErrorDelegate,AlivcLivePusherNetworkDelegate,AlivcLivePusherBGMDelegate,AlivcLivePusherCustomFilterDelegate,AlivcLivePusherCustomDetectorDelegate,AlivcLiveBeautifySettingsViewControllerDelegate, FUAPIDemoBarDelegate>{
@@ -94,86 +98,52 @@ int64_t getCurrentTimeUs()
 
 
 
-#pragma mark ----- 以下 FaceUnity
+#pragma mark --------------FaceUnity
 
 -(FUAPIDemoBar *)demoBar {
     if (!_demoBar) {
         
-        _demoBar = [[FUAPIDemoBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 164 - 64, self.view.frame.size.width, 164)];
-        
-        _demoBar.itemsDataSource = [FUManager shareManager].itemsDataSource;
-        _demoBar.selectedItem = [FUManager shareManager].selectedItem ;
-        
-        _demoBar.filtersDataSource = [FUManager shareManager].filtersDataSource ;
-        _demoBar.beautyFiltersDataSource = [FUManager shareManager].beautyFiltersDataSource ;
-        _demoBar.filtersCHName = [FUManager shareManager].filtersCHName ;
-        _demoBar.selectedFilter = [FUManager shareManager].selectedFilter ;
-        [_demoBar setFilterLevel:[FUManager shareManager].selectedFilterLevel forFilter:[FUManager shareManager].selectedFilter] ;
-        
-        _demoBar.skinDetectEnable = [FUManager shareManager].skinDetectEnable;
-        _demoBar.blurShape = [FUManager shareManager].blurShape ;
-        _demoBar.blurLevel = [FUManager shareManager].blurLevel ;
-        _demoBar.whiteLevel = [FUManager shareManager].whiteLevel ;
-        _demoBar.redLevel = [FUManager shareManager].redLevel;
-        _demoBar.eyelightingLevel = [FUManager shareManager].eyelightingLevel ;
-        _demoBar.beautyToothLevel = [FUManager shareManager].beautyToothLevel ;
-        _demoBar.faceShape = [FUManager shareManager].faceShape ;
-        
-        _demoBar.enlargingLevel = [FUManager shareManager].enlargingLevel ;
-        _demoBar.thinningLevel = [FUManager shareManager].thinningLevel ;
-        _demoBar.enlargingLevel_new = [FUManager shareManager].enlargingLevel_new ;
-        _demoBar.thinningLevel_new = [FUManager shareManager].thinningLevel_new ;
-        _demoBar.jewLevel = [FUManager shareManager].jewLevel ;
-        _demoBar.foreheadLevel = [FUManager shareManager].foreheadLevel ;
-        _demoBar.noseLevel = [FUManager shareManager].noseLevel ;
-        _demoBar.mouthLevel = [FUManager shareManager].mouthLevel ;
-        
-        _demoBar.delegate = self;
+        _demoBar = [[FUAPIDemoBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 194 - 64, self.view.frame.size.width, 194)];
+        _demoBar.mDelegate = self;
     }
     return _demoBar ;
 }
 
-/**      FUAPIDemoBarDelegate       **/
+/// 销毁道具
+- (void)destoryFaceunityItems
+{
 
-- (void)demoBarDidSelectedItem:(NSString *)itemName {
-    
-    [[FUManager shareManager] loadItem:itemName];
-}
-
-- (void)demoBarBeautyParamChanged {
-    
-    [FUManager shareManager].skinDetectEnable = _demoBar.skinDetectEnable;
-    [FUManager shareManager].blurShape = _demoBar.blurShape;
-    [FUManager shareManager].blurLevel = _demoBar.blurLevel ;
-    [FUManager shareManager].whiteLevel = _demoBar.whiteLevel;
-    [FUManager shareManager].redLevel = _demoBar.redLevel;
-    [FUManager shareManager].eyelightingLevel = _demoBar.eyelightingLevel;
-    [FUManager shareManager].beautyToothLevel = _demoBar.beautyToothLevel;
-    [FUManager shareManager].faceShape = _demoBar.faceShape;
-    [FUManager shareManager].enlargingLevel = _demoBar.enlargingLevel;
-    [FUManager shareManager].thinningLevel = _demoBar.thinningLevel;
-    [FUManager shareManager].enlargingLevel_new = _demoBar.enlargingLevel_new;
-    [FUManager shareManager].thinningLevel_new = _demoBar.thinningLevel_new;
-    [FUManager shareManager].jewLevel = _demoBar.jewLevel;
-    [FUManager shareManager].foreheadLevel = _demoBar.foreheadLevel;
-    [FUManager shareManager].noseLevel = _demoBar.noseLevel;
-    [FUManager shareManager].mouthLevel = _demoBar.mouthLevel;
-    
-    [FUManager shareManager].selectedFilter = _demoBar.selectedFilter ;
-    [FUManager shareManager].selectedFilterLevel = _demoBar.selectedFilterLevel;
-}
-
--(void)dealloc {
-    
     [[FUManager shareManager] destoryItems];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
+
+#pragma -FUAPIDemoBarDelegate
+-(void)filterValueChange:(FUBeautyParam *)param{
+    [[FUManager shareManager] filterValueChange:param];
+}
+
+-(void)switchRenderState:(BOOL)state{
+    [FUManager shareManager].isRender = state;
+}
+
+-(void)bottomDidChange:(int)index{
+    if (index < 3) {
+        [[FUManager shareManager] setRenderType:FUDataTypeBeautify];
+    }
+    if (index == 3) {
+        [[FUManager shareManager] setRenderType:FUDataTypeStrick];
+    }
+    
+    if (index == 4) {
+        [[FUManager shareManager] setRenderType:FUDataTypeMakeup];
+    }
+    if (index == 5) {
+        
+        [[FUManager shareManager] setRenderType:FUDataTypebody];
+    }
+}
+
 #pragma mark ----- 以上 FaceUnity
-
-
-
-
-
 
 
 - (void)viewDidLoad {
@@ -209,14 +179,16 @@ int64_t getCurrentTimeUs()
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    _beautyDataManager = [[AlivcPushBeautyDataManager alloc]initWithType:AlivcPushBeautyParamsTypeLive customSaveString:@"AlivcLivePush"];
+    _beautyDataManager = [[AlivcPushBeautyDataManager alloc] initWithType:AlivcPushBeautyParamsTypeLive customSaveString:@"AlivcLivePush"];
     
     
-    
+    [[FUTestRecorder shareRecorder] setupRecord];
     /**         ---- FaceUnity ----         **/
-    
-    [[FUManager shareManager] loadItems];
-    [self.view addSubview:self.demoBar ];
+    [[FUManager shareManager] loadFilter];
+    [FUManager shareManager].isRender = YES;
+    [FUManager shareManager].flipx = YES;
+    [FUManager shareManager].trackFlipx = YES;
+    [self.view addSubview:self.demoBar];
     /**         ---- FaceUnity ----         **/
     
 }
@@ -224,7 +196,17 @@ int64_t getCurrentTimeUs()
     [super viewDidAppear:animated];
     AlivcPushBeautyParams *params = [_beautyDataManager getBeautyParamsOfLevel:[_beautyDataManager getBeautyLevel]];
     [self setBeautyWithParams:params];
+    
+    self.demoBar.frame = CGRectMake(0, self.view.frame.size.height - 194 - 64, self.view.frame.size.width, 194);
+    
 }
+
+- (void)dealloc{
+
+    [[FUManager shareManager] destoryItems];
+    
+}
+
 
 - (void)addUserStream {
     
@@ -344,6 +326,14 @@ int64_t getCurrentTimeUs()
         self.pushConfig.audioChannel = defaultChannel;
         self.pushConfig.audioSampleRate = defaultSampleRate;
     }
+    
+    self.pushConfig.qualityMode = AlivcLivePushQualityModeCustom;
+    self.pushConfig.resolution = AlivcLivePushResolution720P;
+    self.pushConfig.fps = 30;
+    self.pushConfig.minFps = 20;
+    self.pushConfig.minVideoBitrate = 1200;
+    self.pushConfig.initialVideoBitrate = 2400;
+    
     self.livePusher = [[AlivcLivePusher alloc] initWithConfig:self.pushConfig];
     [self.livePusher setLogLevel:(AlivcLivePushLogLevelFatal)];
     if (!self.livePusher) {
@@ -379,10 +369,6 @@ int64_t getCurrentTimeUs()
         fclose(_audioStreamFp);
         _audioStreamFp = 0;
     }
-    
-    
-        
-   
     
     if (self.livePusher) {
         [self.livePusher destory];
@@ -500,7 +486,6 @@ int64_t getCurrentTimeUs()
     }
     return ret;
 }
-
 
 
 /**
@@ -785,6 +770,7 @@ int64_t getCurrentTimeUs()
 - (int)onProcess:(AlivcLivePusher *)pusher texture:(int)texture textureWidth:(int)width textureHeight:(int)height extra:(long)extra
 {
     
+    [[FUTestRecorder shareRecorder] processFrameWithLog];
     int newTexture = [[FUManager shareManager] renderItemWithTexture:texture Width:width Height:height];
     
     return newTexture ;
@@ -957,7 +943,11 @@ int64_t getCurrentTimeUs()
     
     if (self.livePusher) {
         [self.livePusher switchCamera];
+        
+        [[FUManager shareManager] onCameraChange];
+        
     }
+    
 }
 
 - (void)publisherOnClickedFlashButton:(BOOL)flash button:(UIButton *)sender {

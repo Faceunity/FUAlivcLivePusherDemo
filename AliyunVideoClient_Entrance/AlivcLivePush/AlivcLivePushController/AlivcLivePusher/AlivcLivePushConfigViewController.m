@@ -870,7 +870,7 @@ static const NSString *AlivcTextPullUrl = @"rtmp://push-demo.aliyunlive.com/test
     publisherVC.authKey = self.authKey;
     publisherVC.authDuration = self.authDuration;
     publisherVC.isUserMainStream = self.isUserMainStream;
-
+    publisherVC.modalPresentationStyle = 0;
 
     [self presentViewController:publisherVC animated:YES completion:nil];
     

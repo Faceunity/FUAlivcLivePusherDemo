@@ -70,7 +70,7 @@
     self.inputView.font = [UIFont systemFontOfSize:14];
     self.inputView.keyboardType = UIKeyboardTypeNumberPad;
     self.inputView.placeholder = self.cellModel.placeHolder;
-    [self.inputView setValue:RGBToColor(245, 245, 246) forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.inputView setValue:RGBToColor(245, 245, 246) forKeyPath:@"_placeholderLabel.textColor"];
     self.inputView.delegate = (id)self;
     [self.contentView addSubview:self.inputView];
     
