@@ -1,0 +1,247 @@
+//
+//  AlivcBeautyController.m
+//  AlivcLivePusherDemo
+//
+//  Created by zhangjc on 2022/5/7.
+//  Copyright © 2022 TripleL. All rights reserved.
+//
+
+#import "AlivcBeautyController.h"
+
+#import <AliyunQueenUIKit/AliyunQueenUIKit.h>
+#import <queen/queen.h>
+
+#import <CoreMotion/CoreMotion.h>
+
+@interface AlivcBeautyController ()
+
+@property (nonatomic, strong) QueenEngine *beautyEngine;
+@property (nonatomic, strong) AliyunQueenPanelController *beautyPanelController;
+@property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, assign) int screenRotation;
+
+@end
+
+@implementation AlivcBeautyController
+
++ (AlivcBeautyController *)sharedInstance
+{
+    static AlivcBeautyController *sharedInstance = nil;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        if (sharedInstance == nil) {
+            sharedInstance = [[AlivcBeautyController alloc] init];
+        }
+    });
+    return sharedInstance;
+}
+
+- (void)setupBeautyController
+{
+    [self initBeautyEngine];
+    self.beautyPanelController.queenEngine = self.beautyEngine;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.beautyPanelController selectCurrentBeautyEffect];
+    });
+}
+
+- (void)detectVideoBuffer:(long)buffer withWidth:(int)width withHeight:(int)height withVideoFormat:(AlivcLivePushVideoFormat)videoFormat withPushOrientation:(AlivcLivePushOrientation)pushOrientation
+{
+    if (!self.beautyEngine)
+    {
+        return;
+    }
+    
+    int screenRotation = 0;
+    if (pushOrientation == AlivcLivePushOrientationLandscapeLeft)
+    {
+        screenRotation = -90;
+    }
+    else if (pushOrientation == AlivcLivePushOrientationLandscapeRight)
+    {
+        screenRotation = 90;
+    }
+    
+    kQueenImageFormat imageFormat = kQueenImageFormatNV12;
+    switch (videoFormat)
+    {
+        case AlivcLivePushVideoFormatRGB:
+            imageFormat = kQueenImageFormatRGB;
+            break;
+        case AlivcLivePushVideoFormatRGBA:
+            imageFormat = kQueenImageFormatRGBA;
+            break;
+        case AlivcLivePushVideoFormatYUVNV21:
+            imageFormat = kQueenImageFormatNV21;
+            break;
+        case AlivcLivePushVideoFormatYUVYV12:
+        case AlivcLivePushVideoFormatYUVNV12:
+            break;
+        default:
+            NSAssert(false, @"Invalid Image Format For Beauty.");
+            break;
+    }
+    @synchronized (self)
+    {
+        [self.beautyEngine updateInputDataAndRunAlg:(uint8_t*)buffer
+                                      withImgFormat:imageFormat
+                                          withWidth:width
+                                         withHeight:height
+                                         withStride:0
+                                     withInputAngle:(_screenRotation + screenRotation + 360) % 360
+                                    withOutputAngle:(_screenRotation + screenRotation + 360) % 360
+                                       withFlipAxis:0];
+    }
+}
+
+- (int)processGLTextureWithTextureID:(int)textureID withWidth:(int)width withHeight:(int)height
+{
+    if (!self.beautyEngine)
+    {
+        return textureID;
+    }
+    
+    QETextureData* textureData = [[QETextureData alloc] init];
+    textureData.inputTextureID = textureID;
+    textureData.width = width;
+    textureData.height = height;
+    kQueenResultCode result = [self.beautyEngine processTexture:textureData];
+    if (result != kQueenResultCodeOK) 
+    {
+        return textureID;
+    }
+    return textureData.outputTextureID;
+}
+
+- (void)destroyBeautyController
+{
+    @synchronized (self)
+    {
+        [self destroyBeautyEngine];
+    }
+}
+
+- (void)setupBeautyControllerUIWithView:(UIView *)view
+{
+    [self initMotionManager];
+    if (view)
+    {
+        [self initBeautyConfigPanel:view];
+    }
+}
+
+- (void)showPanel:(BOOL)animated
+{
+    if (!self.beautyPanelController)
+    {
+        return;
+    }
+    
+    [self.beautyPanelController showPanel:animated];
+}
+
+- (void)destroyBeautyControllerUI
+{
+    [self destroyMotionManager];
+    [self destroyBeautyConfigPanel];
+}
+
+#pragma mark - Engine
+
+- (void)initBeautyEngine
+{
+    if (self.beautyEngine)
+    {
+        return;
+    }
+    
+    QueenEngineConfigInfo *configInfo = [[QueenEngineConfigInfo alloc] init];
+    configInfo.withContext = NO;
+    configInfo.autoSettingImgAngle = NO;
+    self.beautyEngine = [[QueenEngine alloc] initWithConfigInfo:configInfo];
+}
+
+- (void)destroyBeautyEngine
+{
+    if (self.beautyEngine) 
+    {
+        [self.beautyEngine destroyEngine];
+        self.beautyEngine = nil;
+    }
+}
+
+#pragma mark - Panel
+
+- (void)initBeautyConfigPanel:(UIView *)view
+{
+    if (self.beautyPanelController)
+    {
+        return;
+    }
+    self.beautyPanelController = [[AliyunQueenPanelController alloc] initWithParentView:view];
+    self.beautyPanelController.queenEngine = self.beautyEngine;
+    [self.beautyPanelController selectDefaultBeautyEffect];
+}
+
+- (void)destroyBeautyConfigPanel
+{
+    if (self.beautyPanelController)
+    {
+        [self.beautyPanelController dismiss];
+        self.beautyPanelController = nil;
+    }
+}
+
+#pragma mark - Gravity Motion
+
+- (void)initMotionManager
+{
+    if (self.motionManager)
+    {
+        return;
+    }
+    _screenRotation = 0;
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    if (self.motionManager.accelerometerAvailable)
+    {
+        self.motionManager.accelerometerUpdateInterval = 0.1f;
+        __weak typeof(self) weakSelf = self;
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+                                                 withHandler:^(CMAccelerometerData* accelerometerData, NSError* error) {
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf.motionManager) {
+                CMAccelerometerData* newestAccel = strongSelf.motionManager.accelerometerData;
+                double accelerationX = newestAccel.acceleration.x;
+                double accelerationY = newestAccel.acceleration.y;
+                double ra = atan2(-accelerationY, accelerationX);
+                double degree = ra * 180 / M_PI;
+                if (degree >= -105 && degree <= -75) {
+                    //NSLog(@"@keria motion: %f, 倒立", degree);
+                    _screenRotation = 180;
+                } else if (degree >= -15 && degree <= 15) {
+                    //NSLog(@"@keria motion: %f, 右转", degree);
+                    _screenRotation = 90;
+                } else if (degree >= 75 && degree <= 105) {
+                    //NSLog(@"@keria motion: %f, 正立", degree);
+                    _screenRotation = 0;
+                } else if (degree >= 165 || degree <= -165) {
+                    //NSLog(@"@keria motion: %f, 左转", degree);
+                    _screenRotation = 270;
+                }
+            }
+        }];
+    }
+}
+
+- (void)destroyMotionManager
+{
+    if (self.motionManager) 
+    {
+        [self.motionManager stopAccelerometerUpdates];
+        self.motionManager = nil;
+    }
+}
+
+@end
+
