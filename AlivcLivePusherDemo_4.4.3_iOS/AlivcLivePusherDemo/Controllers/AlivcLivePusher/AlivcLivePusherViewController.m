@@ -65,7 +65,6 @@
 // SDK
 @property (nonatomic, strong) AlivcLivePusher *livePusher;
 
-@property(nonatomic, strong) FUDemoManager *demoManager;
 
 
 @end
@@ -105,16 +104,10 @@ int64_t getCurrentTimeUs()
     defaultChannel = self.pushConfig.audioChannel;
     defaultSampleRate = self.pushConfig.audioSampleRate;
     
-    CGFloat safeAreaBottom = 0;
-    if (@available(iOS 11.0, *)) {
-        safeAreaBottom = [UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;
-    }
+    [FUDemoManager setupFUSDK];
+    [[FUDemoManager shared] addDemoViewToView:self.view originY:CGRectGetHeight(self.view.frame) - FUBottomBarHeight - FUSafaAreaBottomInsets()];
+    self.isuseFU = YES;
     
-    if (self.isuseFU) {
-        self.demoManager = [[FUDemoManager alloc] initWithTargetController:self originY:CGRectGetHeight(self.view.frame) - FUBottomBarHeight - safeAreaBottom];
-    }
-    
-
     [self registerSDK];
     
     int ret = [self setupPusher];
@@ -328,6 +321,7 @@ int64_t getCurrentTimeUs()
    
     
     if (self.livePusher) {
+        self.isuseFU = NO;
         [self.livePusher destory];
     }
     
@@ -742,8 +736,31 @@ int64_t getCurrentTimeUs()
         if ([FUGLContext shareGLContext].currentGLContext != [EAGLContext currentContext]) {
             [[FUGLContext shareGLContext] setCustomGLContext:[EAGLContext currentContext]];
         }
-        int ret = [[FUManager shareManager] renderItemWithTexture:texture Width:width Height:height];
-        return ret;
+
+        [[FUDemoManager shared] checkAITrackedResult];
+        if ([FUDemoManager shared].shouldRender) {
+           
+            [[FUTestRecorder shareRecorder] processFrameWithLog];
+            [FUDemoManager updateBeautyBlurEffect];
+            FURenderInput *input = [[FURenderInput alloc] init];
+           
+            // 根据输入纹理调整参数设置
+            input.renderConfig.imageOrientation = FUImageOrientationDown;
+            FUTexture tex = {texture, CGSizeMake(width, height)};
+            input.texture = tex;
+            input.renderConfig.isFromFrontCamera = YES;
+//            input.renderConfig.isFromMirroredCamera = YES;
+            input.renderConfig.stickerFlipH = YES;
+            // 开启重力感应，内部会自动计算正确方向，设置fuSetDefaultRotationMode，无须外面设置
+            input.renderConfig.gravityEnable = YES;
+            input.renderConfig.textureTransform = CCROT0_FLIPVERTICAL;
+            FURenderOutput *output = [[FURenderKit shareRenderKit] renderWithInput:input];
+            if(output){
+                return output.texture.ID;
+            }else{
+                return texture;
+            }
+       }
     }
     return texture;
 }
@@ -754,9 +771,8 @@ int64_t getCurrentTimeUs()
 {
 //    [[AlivcBeautyController sharedInstance] destroyBeautyController];
     
-    if (self.isuseFU) {
-        [[FUManager shareManager] destoryItems];
-    }
+    [FUDemoManager destory];
+    
 }
 
 #pragma mark - AlivcLivePusherCustomDetectorDelegate
@@ -1020,7 +1036,7 @@ int64_t getCurrentTimeUs()
         
         if(self.isuseFU){
             
-            [[FUManager shareManager] onCameraChange];
+            [FUDemoManager resetTrackedResult];
         }
     }
 }
@@ -1040,7 +1056,7 @@ int64_t getCurrentTimeUs()
 }
 
 - (void)publisherOnClickedBeautyButton:(BOOL)beautyOn {
-    [[AlivcBeautyController sharedInstance] showPanel:YES];
+//    [[AlivcBeautyController sharedInstance] showPanel:YES];
 }
 
 - (void)publisherOnClickedZoom:(CGFloat)zoom {

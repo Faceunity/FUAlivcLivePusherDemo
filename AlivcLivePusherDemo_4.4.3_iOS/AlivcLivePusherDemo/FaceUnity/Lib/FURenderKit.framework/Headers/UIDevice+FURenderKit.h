@@ -49,6 +49,11 @@ typedef NS_ENUM(NSInteger, FUDeviceModelType) {
     FUDeviceModelTypeiPhone13,
     FUDeviceModelTypeiPhone13Pro,
     FUDeviceModelTypeiPhone13ProMax,
+    FUDeviceModelTypeiPhoneSENew,
+    FUDeviceModelTypeiPhone14,
+    FUDeviceModelTypeiPhone14Plus,
+    FUDeviceModelTypeiPhone14Pro,
+    FUDeviceModelTypeiPhone14ProMax,
     FUDeviceModelTypeOthers
 };
 
@@ -57,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIDevice (FURenderKit)
 
 - (FUDeviceModelType)fu_deviceModelType;
+
+- (NSString *)fu_deviceModelString;
 
 - (FUDevicePerformanceLevel)fu_devicePerformanceLevel;
 

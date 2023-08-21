@@ -121,18 +121,18 @@
     self.QRCodeButton.layer.cornerRadius = 10;
     [self.QRCodeButton addTarget:self action:@selector(QRCodeButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    UIButton *fuBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, self.QRCodeButton.bottom + 10, 28, 28)];
-    fuBtn.userInteractionEnabled = NO;
-    fuBtn.enabled = NO;
-    [fuBtn setTitle:@"FU" forState:(UIControlStateNormal)];
-    [fuBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
-    fuBtn.titleLabel.font= [UIFont systemFontOfSize:18];
-    
-    UISwitch *fuswitch = [[UISwitch alloc] initWithFrame:CGRectMake(30, self.QRCodeButton.bottom, 28, 28)];
-    [fuswitch addTarget:self action:@selector(selectedFUChanged:) forControlEvents:(UIControlEventValueChanged)];
-    [fuswitch setOn:YES];
-    [self.view addSubview:fuBtn];
-    [self.view addSubview:fuswitch];
+//    UIButton *fuBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, self.QRCodeButton.bottom + 10, 28, 28)];
+//    fuBtn.userInteractionEnabled = NO;
+//    fuBtn.enabled = NO;
+//    [fuBtn setTitle:@"FU" forState:(UIControlStateNormal)];
+//    [fuBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+//    fuBtn.titleLabel.font= [UIFont systemFontOfSize:18];
+//
+//    UISwitch *fuswitch = [[UISwitch alloc] initWithFrame:CGRectMake(30, self.QRCodeButton.bottom, 28, 28)];
+//    [fuswitch addTarget:self action:@selector(selectedFUChanged:) forControlEvents:(UIControlEventValueChanged)];
+//    [fuswitch setOn:YES];
+//    [self.view addSubview:fuBtn];
+//    [self.view addSubview:fuswitch];
     
     // 默认YES
     self.isuseFU = YES;
@@ -1019,13 +1019,13 @@
     AlivcLivePusherViewController *publisherVC = [[AlivcLivePusherViewController alloc] init];
     publisherVC.pushURL = self.publisherURLTextField.text;
     publisherVC.pushConfig = self.pushConfig;
-    publisherVC.beautyOn = self.beautyOn;
+//    publisherVC.beautyOn = self.beautyOn;
     publisherVC.isUseAsyncInterface = self.isUseAsync;
     publisherVC.authKey = self.authKey;
     publisherVC.authDuration = self.authDuration;
     publisherVC.isUserMainStream = self.isUserMainStream;
     publisherVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    publisherVC.isuseFU = self.isuseFU;
+//    publisherVC.isuseFU = self.isuseFU;
     [self presentViewController:publisherVC animated:YES completion:nil];
     
 }
