@@ -3,8 +3,33 @@
 ## 导入SDK 
 ### 通过cocoapods集成
 
+FURenderKit全功能版本：
 ```
-pod 'FURenderKit', '8.3.0' 
+pod 'FURenderKit'
+```
+
+FURenderKit人脸特效版本：
+
+```
+pod 'FURenderKit_FAUL'
+```
+
+FURenderKit人体特效版本：
+
+```
+pod 'FURenderKit_BAUL'
+```
+
+FURenderKit美颜+贴纸道具版本：
+
+```
+pod 'FURenderKit_FBFS'
+```
+
+FURenderKit人像分割+绿幕抠像版本：
+
+```
+pod 'FURenderKit_BSEG'
 ```
 
 接下来执行：
@@ -37,17 +62,19 @@ setupConfig.authPack = FUAuthPackMake(g_auth_package, sizeof(g_auth_package));
 NSString *faceAIPath = [[NSBundle mainBundle] pathForResource:@"ai_face_processor" ofType:@"bundle"];
 [FUAIKit loadAIModeWithAIType:FUAITYPE_FACEPROCESSOR dataPath:faceAIPath];
 
-// 加载身体 AI 模型，注意：高性能机型加载ai_human_processor_gpu.bundle
-NSString *humanBundleName = [FURenderKit devicePerformanceLevel] == FUDevicePerformanceLevelHigh ? @"ai_human_processor_gpu" : @"ai_human_processor";
-NSString *bodyAIPath = [[NSBundle mainBundle] pathForResource:humanBundleName ofType:@"bundle"];
+NSString *bodyAIPath = [[NSBundle mainBundle] pathForResource:@"ai_human_processor" ofType:@"bundle"];
+// 加载人体 AI 模型（一般方式）
 [FUAIKit loadAIModeWithAIType:FUAITYPE_HUMAN_PROCESSOR dataPath:bodyAIPath];
+// 加载人体 AI 模型（可设置人体分割模式）
+[FUAIKit loadAIHumanModelWithDataPath:bodyAIPath segmentationMode:mode];
 
 // 加载手势 AI 模型
 NSString *handAIPath = [[NSBundle mainBundle] pathForResource:@"ai_hand_processor" ofType:@"bundle"];
 [FUAIKit loadAIModeWithAIType:FUAITYPE_HANDGESTURE dataPath:handAIPath];
 
 // 加载舌头 AI 模型
-NSString *path = [[NSBundle mainBundle] pathForResource:@"tongue" ofType:@"bundle"];        [FUAIKit loadTongueMode:path];
+NSString *path = [[NSBundle mainBundle] pathForResource:@"tongue" ofType:@"bundle"];        
+[FUAIKit loadTongueMode:path];
 ```
 
 
@@ -314,26 +341,99 @@ AI能力相关的功能都通过FUAIKit 加载或获取
 
 @property (nonatomic, assign) FUFaceProcessorFaceLandmarkQuality faceProcessorFaceLandmarkQuality;  // 人脸算法质量
 
-//加载 AI bundle
+/// 加载AI模型
+/// @param type AI类型
+/// @param dataPath 模型路径
 + (void)loadAIModeWithAIType:(FUAITYPE)type dataPath:(NSString *)dataPath;
-//卸载 AI bundle
+
+/// 加载人体AI模型
+/// @param dataPath 模型路径
+/// @param mode 人体分割模式
+/// @note 使用 loadAIModeWithAIType:dataPath: 接口加载人体模型时默认的分割模式为 FUHumanSegmentationModeCPUCommon
++ (void)loadAIHumanModelWithDataPath:(NSString *)dataPath segmentationMode:(FUHumanSegmentationMode)mode;
+
+/// 卸载AI模型
+/// @param type AI 类型
 + (void)unloadAIModeForAIType:(FUAITYPE)type;
-//卸载所有 AI bundle
+
+/// 卸载所有的AI模型
 + (void)unloadAllAIMode;
 
+/// 判断某 AI 模型是否加载
+/// @param type AI 类型
 + (BOOL)loadedAIType:(FUAITYPE)type;
-//加载舌头驱动
+
+/// 加载舌头模型
+/// @param modePath 舌头模型地址
 + (void)loadTongueMode:(NSString *)modePath;
-//脸部类型 单独加载
+
+/// 设置 AI 识别类型
+/// @param type AI 识别类型
 + (void)setTrackFaceAIType:(FUAITYPE)type;
 
+/// 对输入的图像进行 AI 识别，支持人脸、身体、手指能类型的识别
 + (int)trackFaceWithInput:(FUTrackFaceInput *)trackFaceInput;
-// Reset ai model HumanProcessor's tracking state.
-+ (void)resetHumanProcessor;
-//get ai model HumanProcessor's tracking result.
-+ (int)aiHumanProcessorNums;
-//人脸检测置信度
+
+/// 图像明显发生改变时调用该接口重置内部检测结果
++ (void)resetTrackedResult;
+
+/// 跟踪到的人脸数量
++ (int)aiFaceProcessorNums;
+
+/// 设置面部参数
++ (void)setFaceTrackParam:(NSString *)param value:(int)value;
+
+/// 获取人脸信息：    
++ (int)getFaceInfo:(int)faceId
+              name:(NSString *)name
+              pret:(float *)pret
+            number:(int)number;
+
+/// 设置了InputCameraMatrix之后获取获取人脸信息
++ (int)getRotatedFaceInfo:(int)faceId
+                     name:(NSString *)name
+                     pret:(float *)pret
+                   number:(int)number;
+
+/// 人脸检测置信度
 + (float)fuFaceProcessorGetConfidenceScore:(int)index;
+
+/// 设置跟踪到人脸时每次检测的间隔帧数
+/// @param frames 帧数
+/// @note 底层默认间隔帧数为7
++ (void)setFaceProcessorDetectEveryFramesWhenFace:(int)frames;
+
+/// 设置未跟踪到人脸时每次检测的间隔帧数
+/// @param frames 帧数
+/// @note 底层默认间隔帧数为7
++ (void)setFaceProcessorDetectEveryFramesWhenNoFace:(int)frames;
+
+/// 设置人脸离开延迟打开或关闭
+/// @param enable YES为打开 NO为关闭
++ (void)setFaceDelayLeaveEnable:(BOOL)enable;
+
+/// 跟踪到的人体数量
++ (int)aiHumanProcessorNums;
+
+/// 重置身体识别
++ (void)resetHumanProcessor;
+
+/// 设置人体分割场景类型，该方法已被弃用
++ (void)setHumanSegmentationSceneType:(FUHumanSegmentationSceneType)type __attribute__((deprecated("Use loadAIHumanModelWithDataPath: segmentationMode: instead.")))
+
+/// 跟踪到的手势数量
++ (int)aiHandDistinguishNums;
+
+/// 获取手势类型
+/// @param handIndex aiHandDistinguishNums返回手的索引
++ (FUAIGESTURETYPE)fuHandDetectorGetResultGestureType:(int)handIndex;
+
+/// 设置未跟踪到手势时每次检测的间隔帧数
+/// @param frames 帧数
++ (void)setHandDetectEveryFramesWhenNoHand:(int)frames;
+
+/// 动作识别： actionId index of fuHumanProcessorGetNumResults
++ (int)fuHumanProcessorGetResultActionType:(int)actionId;
 ```
 
 其他接口参考  FUAIKit.h 
@@ -367,7 +467,7 @@ beauty.filterName = FUFilterOrigin;
 
 beauty.colorLevel = 0.3;
 beauty.redLevel = 0.3;
-beauty.blurLevel = 0.7*6;
+beauty.blurLevel = 4.2;
 beauty.heavyBlur = 0;
 beauty.blurType = 3;
 
@@ -381,6 +481,7 @@ beauty.removeNasolabialFoldsStrength = 0.0;
 beauty.faceShapeLevel = 1.0;
 beauty.changeFrames = 0;
 beauty.faceShape = 4;
+beauty.faceThreed = 0.0;
 
 beauty.eyeEnlarging = 0.4;
 beauty.cheekThinning = 0.0;
@@ -403,6 +504,10 @@ beauty.intensityLowerJaw= 0.0;
 beauty.intensityEyeCircle = 0.0;
 beauty.intensityBrowHeight = 0.5;
 beauty.intensityBrowSpace = 0.5;
+beauty.intensityEyeLid = 0.0;
+beauty.intensityEyeHeight = 0.5;
+beauty.intensityBrowThick = 0.5;
+beauty.intensityLipThick = 0.5;
 ```
 
 
@@ -426,47 +531,55 @@ FUSticker *sticker1 = [[FUSticker alloc] initWithPath:path1 name:@"sticker"];
 [[FURenderKit shareRenderKit].stickerContainer removeSticker:sticker1];
 ```
 
-带属性的特殊贴纸说明:
+### 人像分割
+
+初始化一个FUAISegment的实例，修改好参数后可以直接赋值给 FURenderKit或者也可以参考贴纸的方式加入stickerContainer中；修改属性示例如下，属性对应的含义详见FUAISegment.h 注释：
 
 ```objective-c
-1. 人像分割 FUAISegment - 外轮廓bundle 的用法
-NSString *path = [[NSBundle mainBundle] pathForResource:@"human_outline" ofType:@"bundle"];
-FUAISegment *outline = [FUAISegment alloc] initWithPath:path name:@"sticker"];
+1. 外轮廓bundle的用法
+NSString *path = [[NSBundle mainBundle] pathForResource:@"human_outline_740" ofType:@"bundle"];
+FUAISegment *outline = [FUAISegment alloc] initWithPath:path name:@"human_outline"];
 outline.lineGap = 2.8; //轮廓分割线和人之间的间距
 outline.lineSize = 2.8; //轮廓分割线宽度
 outline.lineColor = FUColorMake(255/255.0, 180/255.0, 0.0, 0.0); //线的颜色
-[[FURenderKit shareRenderKit].stickerContainer addSticker:outline];
+[FURenderKit shareRenderKit].segmentation = outline;
 
-1. 人像分割 FUAISegment - 自定义背景视频
+2. 自定义背景视频的用法
 NSString *path = [[NSBundle mainBundle] pathForResource:@"bg_segment" ofType:@"bundle"];
-FUAISegment *segment = [FUAISegment alloc] initWithPath:path name:@"sticker"];
+FUAISegment *segment = [FUAISegment alloc] initWithPath:path name:@"bg_segment"];
 segment.videoPath = @“背景视频路径”;//NSURL or NSString
 [segment startVideoDecode];
-//获取视频解析的第一帧图片
-UIImage *image = [segment readFirstFrame];
-[[FURenderKit shareRenderKit].stickerContainer replaceSticker:outline withSticker:segment completion:nil];
+[FURenderKit shareRenderKit].segmentation = segment;
 
-1. 人像分割 FUAISegment - 自定义背景照片
+3. 自定义背景照片的用法
 segment.setBackgroundImage = @"自定义图片";
 
-2. FUAnimoji - 表情
+```
+
+### 音乐滤镜
+
+初始化一个FUMusicFilter的实例，修改好参数后可以直接赋值给 FURenderKit或者也可以参考贴纸的方式加入stickerContainer中；修改属性示例如下，属性对应的含义详见FUMusicFilter.h 注释：
+
+```objective-c
+NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"bundle"];
+FUMusicFilter *music = [FUMusicFilter alloc] initWithPath:path name:@"music"];
+music.musicPath = "音乐文件路径";
+[FURenderKit shareRenderKit].musicFilter = music;
+```
+
+### 其他带属性的特殊贴纸说明
+
+```objective-c
+1. FUAnimoji - 表情
 NSString *path = [[NSBundle mainBundle] pathForResource:@"animoji" ofType:@"bundle"];
 FUAnimoji *animoji = [FUAnimoji alloc] initWithPath:path name:@"animoji"];
 animoji.flowEnable = YES; //卡通表情是否跟随人物移动而移动， YES，跟随， NO 不跟随
 
-3. FUGesture -- 手势
+2. FUGesture -- 手势
 NSString *path = [[NSBundle mainBundle] pathForResource:@"fugesture" ofType:@"bundle"];
 FUGesture *gesture = [FUGesture alloc] initWithPath:path name:@"animoji"];
 gesture.handOffY = YES; //可以单独调整比心的偏移量，> 0 向上，< 0 向下
-
-4. FUMusicFilter - 音乐滤镜
-NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"bundle"];
-FUMusicFilter *music = [FUMusicFilter alloc] initWithPath:path name:@"music"];
-music.musicPath = "音乐文件路径";
 ```
-
-带属性的特殊贴纸说明:
-
 
 
 ### 海报换脸
